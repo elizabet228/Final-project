@@ -24,3 +24,11 @@ def load_json(file_path):
     except FileNotFoundError:
         print(f"Plik {file_path} nie został znaleziony.")
         return None
+
+def save_json(data, file_path):
+    try:
+        with open(file_path, 'w') as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        print(f"Błąd zapisu JSON: {e}")
+
