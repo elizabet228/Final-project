@@ -66,3 +66,8 @@ def load_xml(file_path):
     except FileNotFoundError:
         print(f"Plik {file_path} nie został znaleziony.")
         return None
+
+def save_xml(root, file_path):
+    try:
+        tree
+
