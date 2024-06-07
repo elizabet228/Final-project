@@ -52,3 +52,17 @@ def save_yaml(data, file_path):
             yaml.safe_dump(data, file)
     except Exception as e:
         print(f"Błąd zapisu YAML: {e}")
+
+import xml.etree.ElementTree as ET
+
+def load_xml(file_path):
+    try:
+        tree = ET.parse(file_path)
+        root = tree.getroot()
+        return root
+    except ET.ParseError as e:
+        print(f"Błąd parsowania XML: {e}")
+        return None
+    except FileNotFoundError:
+        print(f"Plik {file_path} nie został znaleziony.")
+        return None
