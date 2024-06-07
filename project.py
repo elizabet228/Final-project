@@ -45,3 +45,10 @@ def load_yaml(file_path):
     except FileNotFoundError:
         print(f"Plik {file_path} nie został znaleziony.")
         return None
+
+def save_yaml(data, file_path):
+    try:
+        with open(file_path, 'w') as file:
+            yaml.safe_dump(data, file)
+    except Exception as e:
+        print(f"Błąd zapisu YAML: {e}")
